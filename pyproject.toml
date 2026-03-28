@@ -1,0 +1,23 @@
+[project]
+name = "copillust"
+version = "0.1.0"
+description = "Illustration analysis toolkit - pose estimation and beyond"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "torchvision",
+    "numpy",
+    "opencv-python",
+    "Pillow",
+    "pycocotools",
+    "matplotlib",
+    "tqdm",
+    "pandas",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pose_estimation*"]

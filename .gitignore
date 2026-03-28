@@ -1,0 +1,52 @@
+# Data (large, downloaded/generated)
+data/
+experiments/
+vendor/
+
+# mydata images (personal illustrations, not distributable)
+mydata/**/*.jpeg
+mydata/**/*.jpg
+mydata/**/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.venv/
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Model checkpoints
+*.pth
+*.ckpt
+*.safetensors
+
+# Logs
+*.log
+train.log
+
+# Temporary
+/tmp/
+*.tmp
+
+# Lock file (large)
+uv.lock
+
+# Config cache
+configs/merge_stage_c.json
+
+# Claude internal
+.claude/
