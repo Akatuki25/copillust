@@ -1,6 +1,6 @@
 # Data (large, downloaded/generated)
-data/
-experiments/
+/data/
+/experiments/
 vendor/
 
 # mydata images (personal illustrations, not distributable)
