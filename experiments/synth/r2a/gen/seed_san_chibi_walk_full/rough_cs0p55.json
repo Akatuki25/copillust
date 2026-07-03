@@ -1,0 +1,11 @@
+{
+ "scene": "seed_san_chibi_walk_full",
+ "style": "rough",
+ "cond_scale": 0.55,
+ "prompt": "masterpiece, best quality, newest, 1boy, solo, simple background, chibi, full body, sketch, rough sketch, monochrome, greyscale, white background",
+ "neg": "worst quality, bad quality, lowres, bad anatomy, bad hands, photorealistic, 3d, watermark, signature, text",
+ "steps": 28,
+ "cfg": 5.5,
+ "seed": 1234,
+ "sec": 987.8
+}

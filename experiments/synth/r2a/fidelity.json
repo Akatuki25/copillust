@@ -1,0 +1,121 @@
+{
+ "model": "Curriculum S2",
+ "rows": [
+  {
+   "scene": "seed_san_chibi_walk_full",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 0.7058823529411765,
+   "pck02": 1.0,
+   "mean_nd": 0.0864025130867958
+  },
+  {
+   "scene": "seed_san_chibi_walk_full",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 0.7058823529411765,
+   "pck02": 1.0,
+   "mean_nd": 0.0635470449924469
+  },
+  {
+   "scene": "seed_san_chibi_walk_full",
+   "cond": "line",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 0.7647058823529411,
+   "pck02": 1.0,
+   "mean_nd": 0.05959634855389595
+  },
+  {
+   "scene": "seed_san_normal_wave_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.024028191342949867
+  },
+  {
+   "scene": "seed_san_normal_wave_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02140505239367485
+  },
+  {
+   "scene": "seed_san_normal_wave_full",
+   "cond": "line",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.019974226132035255
+  }
+ ],
+ "summary": {
+  "build:chibi|line": {
+   "n": 1,
+   "pck01": 0.765,
+   "pck02": 1.0,
+   "mean_nd": 0.06
+  },
+  "build:chibi|rough_cs0p55": {
+   "n": 1,
+   "pck01": 0.706,
+   "pck02": 1.0,
+   "mean_nd": 0.086
+  },
+  "build:chibi|rough_cs0p90": {
+   "n": 1,
+   "pck01": 0.706,
+   "pck02": 1.0,
+   "mean_nd": 0.064
+  },
+  "build:normal|line": {
+   "n": 1,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02
+  },
+  "build:normal|rough_cs0p55": {
+   "n": 1,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.024
+  },
+  "build:normal|rough_cs0p90": {
+   "n": 1,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.021
+  },
+  "line": {
+   "n": 2,
+   "pck01": 0.882,
+   "pck02": 1.0,
+   "mean_nd": 0.04
+  },
+  "rough_cs0p55": {
+   "n": 2,
+   "pck01": 0.853,
+   "pck02": 1.0,
+   "mean_nd": 0.055
+  },
+  "rough_cs0p90": {
+   "n": 2,
+   "pck01": 0.853,
+   "pck02": 1.0,
+   "mean_nd": 0.042
+  }
+ }
+}
