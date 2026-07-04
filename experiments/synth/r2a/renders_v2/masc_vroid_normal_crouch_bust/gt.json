@@ -1,0 +1,116 @@
+{
+ "scene": "masc_vroid_normal_crouch_bust",
+ "model": "masc_vroid",
+ "build": "normal",
+ "pose": "crouch",
+ "cam": "bust",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   407.0,
+   29.3,
+   1
+  ],
+  [
+   440.4,
+   49.1,
+   1
+  ],
+  [
+   372.9,
+   53.9,
+   1
+  ],
+  [
+   515.2,
+   139.4,
+   1
+  ],
+  [
+   297.9,
+   151.6,
+   1
+  ],
+  [
+   698.5,
+   412.6,
+   2
+  ],
+  [
+   97.2,
+   421.4,
+   2
+  ],
+  [
+   1015.2,
+   289.7,
+   0
+  ],
+  [
+   -360.5,
+   335.0,
+   0
+  ],
+  [
+   2177.1,
+   -149.6,
+   0
+  ],
+  [
+   -1357.0,
+   187.3,
+   0
+  ],
+  [
+   522.0,
+   1484.7,
+   0
+  ],
+  [
+   88.0,
+   1421.2,
+   0
+  ],
+  [
+   540.8,
+   770.4,
+   1
+  ],
+  [
+   388.5,
+   777.9,
+   1
+  ],
+  [
+   430.8,
+   -27.6,
+   0
+  ],
+  [
+   372.2,
+   3.3,
+   2
+  ]
+ ],
+ "face_kp_approx": true
+}

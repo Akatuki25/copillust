@@ -1,0 +1,116 @@
+{
+ "scene": "seed_san_chibi_crouch_bust",
+ "model": "seed_san",
+ "build": "chibi",
+ "pose": "crouch",
+ "cam": "bust",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   267.3,
+   203.7,
+   1
+  ],
+  [
+   296.4,
+   201.3,
+   1
+  ],
+  [
+   294.6,
+   222.7,
+   2
+  ],
+  [
+   392.2,
+   217.7,
+   2
+  ],
+  [
+   379.4,
+   283.7,
+   2
+  ],
+  [
+   621.3,
+   419.0,
+   1
+  ],
+  [
+   137.3,
+   415.3,
+   2
+  ],
+  [
+   668.3,
+   683.0,
+   2
+  ],
+  [
+   73.3,
+   685.7,
+   2
+  ],
+  [
+   715.4,
+   907.4,
+   1
+  ],
+  [
+   27.5,
+   925.7,
+   2
+  ],
+  [
+   639.1,
+   1280.4,
+   0
+  ],
+  [
+   184.0,
+   1308.9,
+   0
+  ],
+  [
+   873.9,
+   1916.0,
+   0
+  ],
+  [
+   85.7,
+   2002.5,
+   0
+  ],
+  [
+   817.4,
+   2186.8,
+   0
+  ],
+  [
+   52.6,
+   2269.6,
+   0
+  ]
+ ],
+ "face_kp_approx": true
+}

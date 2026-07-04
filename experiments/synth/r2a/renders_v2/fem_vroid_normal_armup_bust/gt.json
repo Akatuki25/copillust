@@ -1,0 +1,116 @@
+{
+ "scene": "fem_vroid_normal_armup_bust",
+ "model": "fem_vroid",
+ "build": "normal",
+ "pose": "armup",
+ "cam": "bust",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   378.8,
+   154.0,
+   1
+  ],
+  [
+   404.1,
+   171.9,
+   1
+  ],
+  [
+   356.4,
+   173.3,
+   1
+  ],
+  [
+   459.4,
+   243.7,
+   2
+  ],
+  [
+   310.1,
+   247.3,
+   1
+  ],
+  [
+   532.4,
+   416.2,
+   2
+  ],
+  [
+   238.7,
+   418.2,
+   2
+  ],
+  [
+   824.6,
+   516.4,
+   0
+  ],
+  [
+   517.5,
+   483.8,
+   1
+  ],
+  [
+   1137.2,
+   557.8,
+   0
+  ],
+  [
+   775.1,
+   524.0,
+   0
+  ],
+  [
+   488.1,
+   983.9,
+   1
+  ],
+  [
+   274.3,
+   976.7,
+   1
+  ],
+  [
+   488.4,
+   1472.2,
+   0
+  ],
+  [
+   276.1,
+   1457.7,
+   0
+  ],
+  [
+   489.4,
+   2013.7,
+   0
+  ],
+  [
+   282.1,
+   1991.5,
+   0
+  ]
+ ],
+ "face_kp_approx": true
+}
