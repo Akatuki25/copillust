@@ -1,0 +1,116 @@
+{
+ "scene": "fem_vroid_chibi_walk_high",
+ "model": "fem_vroid",
+ "build": "chibi",
+ "pose": "walk",
+ "cam": "high",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   368.6,
+   407.6,
+   1
+  ],
+  [
+   397.5,
+   420.7,
+   1
+  ],
+  [
+   344.8,
+   415.8,
+   1
+  ],
+  [
+   459.7,
+   473.2,
+   1
+  ],
+  [
+   298.8,
+   457.4,
+   1
+  ],
+  [
+   458.8,
+   566.2,
+   2
+  ],
+  [
+   299.1,
+   548.7,
+   1
+  ],
+  [
+   535.9,
+   621.5,
+   2
+  ],
+  [
+   253.5,
+   521.5,
+   2
+  ],
+  [
+   618.3,
+   683.9,
+   2
+  ],
+  [
+   211.3,
+   507.5,
+   2
+  ],
+  [
+   440.4,
+   816.1,
+   1
+  ],
+  [
+   312.5,
+   798.3,
+   1
+  ],
+  [
+   451.7,
+   651.2,
+   2
+  ],
+  [
+   301.3,
+   722.8,
+   1
+  ],
+  [
+   459.4,
+   476.9,
+   1
+  ],
+  [
+   268.4,
+   674.4,
+   2
+  ]
+ ],
+ "face_kp_approx": true
+}

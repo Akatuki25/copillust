@@ -1,0 +1,116 @@
+{
+ "scene": "seed_san_chibi_wave_high",
+ "model": "seed_san",
+ "build": "chibi",
+ "pose": "wave",
+ "cam": "high",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   373.4,
+   376.1,
+   1
+  ],
+  [
+   384.3,
+   382.2,
+   1
+  ],
+  [
+   382.5,
+   376.2,
+   1
+  ],
+  [
+   417.9,
+   402.6,
+   1
+  ],
+  [
+   411.5,
+   383.5,
+   1
+  ],
+  [
+   492.4,
+   450.3,
+   2
+  ],
+  [
+   330.3,
+   447.2,
+   2
+  ],
+  [
+   502.9,
+   524.9,
+   2
+  ],
+  [
+   254.9,
+   398.7,
+   2
+  ],
+  [
+   509.8,
+   585.6,
+   2
+  ],
+  [
+   244.6,
+   324.3,
+   2
+  ],
+  [
+   467.2,
+   667.4,
+   1
+  ],
+  [
+   349.9,
+   664.6,
+   1
+  ],
+  [
+   463.6,
+   762.8,
+   2
+  ],
+  [
+   351.3,
+   759.8,
+   2
+  ],
+  [
+   459.9,
+   855.7,
+   2
+  ],
+  [
+   353.0,
+   852.6,
+   2
+  ]
+ ],
+ "face_kp_approx": true
+}

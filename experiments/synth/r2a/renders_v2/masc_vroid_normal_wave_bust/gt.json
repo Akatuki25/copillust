@@ -1,0 +1,116 @@
+{
+ "scene": "masc_vroid_normal_wave_bust",
+ "model": "masc_vroid",
+ "build": "normal",
+ "pose": "wave",
+ "cam": "bust",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   383.9,
+   146.2,
+   1
+  ],
+  [
+   406.5,
+   162.3,
+   1
+  ],
+  [
+   361.3,
+   162.3,
+   1
+  ],
+  [
+   454.8,
+   227.0,
+   1
+  ],
+  [
+   312.8,
+   226.9,
+   1
+  ],
+  [
+   569.3,
+   415.8,
+   2
+  ],
+  [
+   203.9,
+   418.5,
+   2
+  ],
+  [
+   314.2,
+   473.5,
+   1
+  ],
+  [
+   50.6,
+   634.2,
+   2
+  ],
+  [
+   49.3,
+   508.0,
+   2
+  ],
+  [
+   -231.7,
+   682.8,
+   0
+  ],
+  [
+   488.2,
+   981.5,
+   2
+  ],
+  [
+   273.7,
+   973.7,
+   1
+  ],
+  [
+   488.6,
+   1470.0,
+   0
+  ],
+  [
+   275.6,
+   1454.1,
+   0
+  ],
+  [
+   489.9,
+   2010.6,
+   0
+  ],
+  [
+   281.8,
+   1986.4,
+   0
+  ]
+ ],
+ "face_kp_approx": true
+}
