@@ -1,0 +1,116 @@
+{
+ "scene": "fem_vroid_normal_sit_full",
+ "model": "fem_vroid",
+ "build": "normal",
+ "pose": "sit",
+ "cam": "full",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   377.3,
+   263.7,
+   1
+  ],
+  [
+   385.2,
+   270.0,
+   1
+  ],
+  [
+   369.1,
+   269.8,
+   1
+  ],
+  [
+   402.4,
+   294.9,
+   1
+  ],
+  [
+   351.0,
+   294.2,
+   2
+  ],
+  [
+   428.0,
+   352.1,
+   2
+  ],
+  [
+   326.7,
+   351.1,
+   2
+  ],
+  [
+   451.4,
+   452.1,
+   2
+  ],
+  [
+   304.3,
+   452.0,
+   2
+  ],
+  [
+   465.3,
+   551.0,
+   2
+  ],
+  [
+   283.6,
+   550.7,
+   2
+  ],
+  [
+   417.7,
+   536.7,
+   1
+  ],
+  [
+   343.8,
+   536.8,
+   1
+  ],
+  [
+   455.2,
+   592.7,
+   2
+  ],
+  [
+   341.5,
+   592.4,
+   2
+  ],
+  [
+   478.9,
+   816.9,
+   2
+  ],
+  [
+   321.1,
+   819.8,
+   2
+  ]
+ ],
+ "face_kp_approx": true
+}

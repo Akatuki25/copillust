@@ -30,7 +30,9 @@ def arg(name, default):
 
 
 VRM = arg("--vrm", "assets/vrm/fem_vroid.vrm")
-OUT = arg("--out", "r2a/renders")
+# absolute: Blender does not resolve a relative render.filepath against the CWD
+# (on Windows it lands on the drive root)
+OUT = os.path.abspath(arg("--out", "r2a/renders"))
 POSES = arg("--poses", "stand,armup,sit,walk").split(",")
 BUILDS = arg("--builds", "normal,chibi").split(",")
 CAMS = arg("--cams", "full,bust,high").split(",")
@@ -39,6 +41,10 @@ RES = (768, 1024)
 
 random.seed(SEED)
 MODEL = os.path.splitext(os.path.basename(VRM))[0]
+# VRoid Studio native-proportion assets: fem2_chibi.vrm etc. carry their build in
+# the filename — no bone-scale faking, --builds is ignored for them
+NATIVE_BUILD = next((b for b in ("normal", "chibi", "small")
+                     if MODEL.endswith("_" + b)), None)
 FACE_KP = {"nose", "left_eye", "right_eye", "left_ear", "right_ear"}
 
 # ---------------- import ----------------
@@ -59,10 +65,13 @@ CAND = {
     "head": ["J_Bip_C_Head", "head", "head 1"],
     "eye_l": ["J_Adj_L_FaceEye", "eye.L"], "eye_r": ["J_Adj_R_FaceEye", "eye.R"],
     "uarm_l": ["J_Bip_L_UpperArm", "upper_arm.L"], "uarm_r": ["J_Bip_R_UpperArm", "upper_arm.R"],
-    "larm_l": ["J_Bip_L_LowerArm", "forearm.L"], "larm_r": ["J_Bip_R_LowerArm", "forearm.R"],
+    "larm_l": ["J_Bip_L_LowerArm", "lower_arm.L", "forearm.L"],
+    "larm_r": ["J_Bip_R_LowerArm", "lower_arm.R", "forearm.R"],
     "hand_l": ["J_Bip_L_Hand", "hand.L"], "hand_r": ["J_Bip_R_Hand", "hand.R"],
-    "uleg_l": ["J_Bip_L_UpperLeg", "thigh.L"], "uleg_r": ["J_Bip_R_UpperLeg", "thigh.R"],
-    "lleg_l": ["J_Bip_L_LowerLeg", "shin.L"], "lleg_r": ["J_Bip_R_LowerLeg", "shin.R"],
+    "uleg_l": ["J_Bip_L_UpperLeg", "upper_leg.L", "thigh.L"],
+    "uleg_r": ["J_Bip_R_UpperLeg", "upper_leg.R", "thigh.R"],
+    "lleg_l": ["J_Bip_L_LowerLeg", "lower_leg.L", "shin.L"],
+    "lleg_r": ["J_Bip_R_LowerLeg", "lower_leg.R", "shin.R"],
     "foot_l": ["J_Bip_L_Foot", "foot.L"], "foot_r": ["J_Bip_R_Foot", "foot.R"],
 }
 B = {}
@@ -112,15 +121,22 @@ def rot_world(key, axis, deg):
     upd()
 
 
+AIM_CHILD = {"uarm_l": "larm_l", "larm_l": "hand_l", "uarm_r": "larm_r", "larm_r": "hand_r",
+             "uleg_l": "lleg_l", "lleg_l": "foot_l", "uleg_r": "lleg_r", "lleg_r": "foot_r"}
+
+
 def aim_bone(key, tdir, j=0.05):
-    """Rotate pose bone so its head->tail direction points along world tdir.
-    Rest-pose agnostic (works for both T-pose and A-pose rigs)."""
+    """Rotate pose bone so the segment head -> anatomical child joint points along
+    world tdir. glTF import has no tail data (the importer guesses bone tails), so
+    head->tail is unreliable on some rigs; the child joint head is the real
+    elbow/wrist/knee/ankle position. Rest-pose agnostic (T-pose and A-pose rigs)."""
     pb = ARM.pose.bones[B[key]]
     upd()
     M = ARM.matrix_world @ pb.matrix
     head = M.to_translation()
-    tail = ARM.matrix_world @ pb.tail
-    cur = (tail - head).normalized()
+    child = AIM_CHILD.get(key)
+    tip = bone_head_world(child) if child else (ARM.matrix_world @ pb.tail)
+    cur = (tip - head).normalized()
     t = Vector(tdir) + Vector((random.uniform(-j, j), random.uniform(-j, j), random.uniform(-j, j)))
     t.normalize()
     axis = cur.cross(t)
@@ -266,26 +282,39 @@ def look_at(cam, target):
     cam.rotation_euler = d.to_track_quat("-Z", "Y").to_euler()
 
 
-def place_cam(cam, mode, kw):
-    head_scale = ARM.pose.bones[B["head"]].scale[0]
-    top = bone_head_world("head") + Vector((0, 0, 1.6 * HEAD_LEN * head_scale))
-    pts = list(kw.values()) + [top]
+def fit_cam(cam, pts, offset_dir, margin=1.25):
+    """Place cam along offset_dir so the bounding sphere of pts fills the frame.
+    Distance from the lens fov (50mm / 36mm sensor, portrait render: the
+    horizontal half-fov is the tighter constraint)."""
     lo = Vector((min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)))
     hi = Vector((max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts)))
     c = (lo + hi) / 2
-    size = max(hi.z - lo.z, (hi - lo).length * 0.8)
+    r = max((hi - lo).length / 2, 1e-4)
+    half_w = math.atan(18.0 * (RES[0] / RES[1]) / cam.data.lens)
+    dist = r * margin / math.tan(half_w)
+    cam.location = c + offset_dir.normalized() * dist
+    look_at(cam, c)
+
+
+def place_cam(cam, mode, kw):
+    head_scale = ARM.pose.bones[B["head"]].scale[0]
+    top = bone_head_world("head") + Vector((0, 0, 1.6 * HEAD_LEN * head_scale))
+    body_pts = list(kw.values()) + [top]
+    hips_mid = (kw["left_hip"] + kw["right_hip"]) / 2
+    # lying / horizontal body: a horizontal camera sees it edge-on -> lift the view
+    horizontal = abs(bone_head_world("head").z - hips_mid.z) < 0.25 * CHAR_H
+    lift = Vector((0, 0, 1.0)) if horizontal else Vector((0, 0, 0))
     fdir = Vector((random.uniform(-0.25, 0.25), FWD, 0)).normalized()
     if mode == "full":
-        cam.location = c + fdir * size * 1.7
-        look_at(cam, c)
+        fit_cam(cam, body_pts, fdir + lift, margin=1.2)
     elif mode == "bust":
-        t = (kw["left_shoulder"] + kw["right_shoulder"]) / 2
-        t = t + Vector((0, 0, -0.05 * size))
-        cam.location = t + fdir * size * 0.75
-        look_at(cam, t)
+        sh_mid = (kw["left_shoulder"] + kw["right_shoulder"]) / 2
+        pts = [kw[k] for k in ("nose", "left_eye", "right_eye", "left_ear", "right_ear",
+                               "left_shoulder", "right_shoulder")]
+        pts += [top, sh_mid + (hips_mid - sh_mid) * 0.5]
+        fit_cam(cam, pts, fdir + lift, margin=1.35)
     elif mode == "high":
-        cam.location = c + fdir * size * 1.7 + Vector((0, 0, size * 1.2))
-        look_at(cam, c + Vector((0, 0, size * 0.15)))
+        fit_cam(cam, body_pts, fdir + Vector((0, 0, 1.1)), margin=1.2)
     upd()
 
 
@@ -395,15 +424,17 @@ upd()
 setup_lights()
 cam = make_cam()
 n = 0
-for build in BUILDS:
+for build in ([NATIVE_BUILD] if NATIVE_BUILD else BUILDS):
     for pose in POSES:
         reset_pose()
-        apply_build(build)
+        if not NATIVE_BUILD:
+            apply_build(build)
         apply_pose(pose)
         kw = keypoints_world()
         for cmode in CAMS:
             place_cam(cam, cmode, kw)
-            sid = f"{MODEL}_{build}_{pose}_{cmode}"
+            sid = f"{MODEL}_{build}_{pose}_{cmode}" if not NATIVE_BUILD \
+                else f"{MODEL}_{pose}_{cmode}"
             d = os.path.join(OUT, sid)
             os.makedirs(d, exist_ok=True)
             kps = project_and_flag(cam, kw)

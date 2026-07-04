@@ -1,0 +1,116 @@
+{
+ "scene": "masc_vroid_normal_stand_high",
+ "model": "masc_vroid",
+ "build": "normal",
+ "pose": "stand",
+ "cam": "high",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   380.9,
+   285.6,
+   1
+  ],
+  [
+   389.1,
+   287.1,
+   1
+  ],
+  [
+   372.1,
+   288.1,
+   1
+  ],
+  [
+   406.3,
+   296.5,
+   1
+  ],
+  [
+   353.0,
+   299.7,
+   1
+  ],
+  [
+   446.5,
+   350.6,
+   2
+  ],
+  [
+   313.1,
+   354.5,
+   2
+  ],
+  [
+   464.8,
+   420.5,
+   2
+  ],
+  [
+   302.3,
+   423.2,
+   2
+  ],
+  [
+   472.2,
+   489.3,
+   2
+  ],
+  [
+   295.0,
+   493.5,
+   2
+  ],
+  [
+   415.6,
+   496.3,
+   1
+  ],
+  [
+   345.9,
+   498.6,
+   1
+  ],
+  [
+   413.0,
+   593.6,
+   1
+  ],
+  [
+   348.7,
+   595.9,
+   1
+  ],
+  [
+   410.1,
+   685.1,
+   2
+  ],
+  [
+   351.3,
+   687.3,
+   2
+  ]
+ ],
+ "face_kp_approx": true
+}

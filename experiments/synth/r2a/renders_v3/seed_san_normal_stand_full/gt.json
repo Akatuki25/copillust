@@ -1,0 +1,116 @@
+{
+ "scene": "seed_san_normal_stand_full",
+ "model": "seed_san",
+ "build": "normal",
+ "pose": "stand",
+ "cam": "full",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   372.9,
+   234.8,
+   1
+  ],
+  [
+   377.0,
+   236.4,
+   1
+  ],
+  [
+   376.8,
+   238.1,
+   1
+  ],
+  [
+   390.0,
+   245.3,
+   1
+  ],
+  [
+   389.2,
+   250.3,
+   1
+  ],
+  [
+   451.7,
+   295.6,
+   2
+  ],
+  [
+   325.2,
+   296.0,
+   2
+  ],
+  [
+   471.4,
+   408.2,
+   2
+  ],
+  [
+   297.7,
+   406.5,
+   2
+  ],
+  [
+   490.7,
+   504.6,
+   2
+  ],
+  [
+   277.2,
+   502.8,
+   2
+  ],
+  [
+   428.4,
+   486.6,
+   1
+  ],
+  [
+   348.2,
+   486.6,
+   1
+  ],
+  [
+   428.4,
+   641.1,
+   2
+  ],
+  [
+   348.0,
+   640.9,
+   2
+  ],
+  [
+   428.6,
+   814.3,
+   2
+  ],
+  [
+   348.2,
+   814.0,
+   2
+  ]
+ ],
+ "face_kp_approx": true
+}

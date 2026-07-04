@@ -1,0 +1,116 @@
+{
+ "scene": "fem_vroid_chibi_crouch_bust",
+ "model": "fem_vroid",
+ "build": "chibi",
+ "pose": "crouch",
+ "cam": "bust",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   393.2,
+   360.2,
+   1
+  ],
+  [
+   422.1,
+   381.2,
+   1
+  ],
+  [
+   363.8,
+   382.1,
+   1
+  ],
+  [
+   486.4,
+   469.5,
+   2
+  ],
+  [
+   299.2,
+   470.5,
+   2
+  ],
+  [
+   485.5,
+   591.1,
+   2
+  ],
+  [
+   287.7,
+   589.2,
+   2
+  ],
+  [
+   506.6,
+   717.7,
+   2
+  ],
+  [
+   270.3,
+   710.9,
+   2
+  ],
+  [
+   523.3,
+   842.5,
+   2
+  ],
+  [
+   246.4,
+   828.4,
+   1
+  ],
+  [
+   458.8,
+   998.9,
+   2
+  ],
+  [
+   266.8,
+   987.5,
+   1
+  ],
+  [
+   451.1,
+   1227.2,
+   0
+  ],
+  [
+   170.0,
+   1202.0,
+   0
+  ],
+  [
+   487.6,
+   1433.4,
+   0
+  ],
+  [
+   195.3,
+   1406.0,
+   0
+  ]
+ ],
+ "face_kp_approx": true
+}

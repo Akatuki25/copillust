@@ -1,0 +1,116 @@
+{
+ "scene": "seed_san_normal_armup_bust",
+ "model": "seed_san",
+ "build": "normal",
+ "pose": "armup",
+ "cam": "bust",
+ "img_w": 768,
+ "img_h": 1024,
+ "coco_order": [
+  "nose",
+  "left_eye",
+  "right_eye",
+  "left_ear",
+  "right_ear",
+  "left_shoulder",
+  "right_shoulder",
+  "left_elbow",
+  "right_elbow",
+  "left_wrist",
+  "right_wrist",
+  "left_hip",
+  "right_hip",
+  "left_knee",
+  "right_knee",
+  "left_ankle",
+  "right_ankle"
+ ],
+ "keypoints": [
+  [
+   423.7,
+   342.4,
+   1
+  ],
+  [
+   414.3,
+   350.0,
+   1
+  ],
+  [
+   412.4,
+   347.6,
+   1
+  ],
+  [
+   384.8,
+   379.4,
+   1
+  ],
+  [
+   377.2,
+   372.8,
+   1
+  ],
+  [
+   544.5,
+   498.9,
+   2
+  ],
+  [
+   221.2,
+   498.7,
+   2
+  ],
+  [
+   635.7,
+   223.7,
+   2
+  ],
+  [
+   152.2,
+   783.4,
+   2
+  ],
+  [
+   686.1,
+   -21.7,
+   0
+  ],
+  [
+   120.1,
+   1032.5,
+   0
+  ],
+  [
+   488.5,
+   993.6,
+   1
+  ],
+  [
+   281.3,
+   997.8,
+   1
+  ],
+  [
+   489.4,
+   1394.2,
+   0
+  ],
+  [
+   281.2,
+   1402.1,
+   0
+  ],
+  [
+   487.1,
+   1826.6,
+   0
+  ],
+  [
+   280.9,
+   1838.2,
+   0
+  ]
+ ],
+ "face_kp_approx": true
+}

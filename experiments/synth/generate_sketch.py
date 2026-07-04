@@ -11,6 +11,7 @@ import argparse
 import gc
 import json
 import os
+import random
 import time
 
 import torch
@@ -32,6 +33,25 @@ STYLES = {
     "pencil": "traditional media, colored pencil (medium), sketch, painting (medium)",
     "lineart": "lineart, monochrome, white background",
 }
+
+
+HAIR = ["short hair", "long hair", "twintails", "ponytail", "bob cut", "messy hair"]
+HAIR_COLOR = ["black hair", "brown hair", "blonde hair", "silver hair"]
+OUTFIT = ["school uniform", "hoodie", "t-shirt", "shorts", "jacket", "casual clothes"]
+
+
+def character_tags(scene, style, cs, seed):
+    """Mannequin renders (fem/masc vroid) get diffusion-invented hair/clothes so
+    the pixel domain matches real character sketches (2026-07-04 決定: 方針(b)).
+    seed_san already has hair/clothes in the condition lines — inventing different
+    ones there only invites geometric drift. Deterministic per (scene,style,cs)."""
+    if not scene.startswith(("fem", "masc")):  # fem_vroid/masc_vroid + fem2/masc2
+        return []
+    rng = random.Random(f"{scene}|{style}|{cs}|{seed}")
+    tags = [rng.choice(HAIR), rng.choice(OUTFIT)]
+    if style == "pencil":
+        tags.insert(1, rng.choice(HAIR_COLOR))
+    return tags
 
 
 def scene_tags(scene):
@@ -94,8 +114,9 @@ def main():
         cond = ImageOps.invert(Image.open(line_path).convert("L")).convert("RGB")
         os.makedirs(os.path.join(OUT, scene), exist_ok=True)
         for style in styles:
-            prompt = f"{QUALITY}, {scene_tags(scene)}, {STYLES[style]}"
             for cs in scales:
+                extra = character_tags(scene, style, cs, args.seed)
+                prompt = ", ".join([QUALITY, scene_tags(scene)] + extra + [STYLES[style]])
                 name = f"{style}_cs{cs:.2f}".replace(".", "p")
                 fp = os.path.join(OUT, scene, name + ".png")
                 if os.path.exists(fp):
