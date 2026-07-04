@@ -37,6 +37,9 @@ POSES = arg("--poses", "stand,armup,sit,walk").split(",")
 BUILDS = arg("--builds", "normal,chibi").split(",")
 CAMS = arg("--cams", "full,bust,high").split(",")
 SEED = int(arg("--seed", "42"))
+PASSES = arg("--passes", "toon,line").split(",")  # scale runs: line only
+JSCALE = float(arg("--jscale", "1"))  # jitter amplifier for pose/camera diversity
+SEED_IN_NAME = "--seed-in-name" in argv  # scene id suffix _s<seed> (seed sweeps)
 RES = (768, 1024)
 
 random.seed(SEED)
@@ -125,7 +128,9 @@ AIM_CHILD = {"uarm_l": "larm_l", "larm_l": "hand_l", "uarm_r": "larm_r", "larm_r
              "uleg_l": "lleg_l", "lleg_l": "foot_l", "uleg_r": "lleg_r", "lleg_r": "foot_r"}
 
 
-def aim_bone(key, tdir, j=0.05):
+def aim_bone(key, tdir, j=None):
+    if j is None:
+        j = 0.05 * JSCALE
     """Rotate pose bone so the segment head -> anatomical child joint points along
     world tdir. glTF import has no tail data (the importer guesses bone tails), so
     head->tail is unreliable on some rigs; the child joint head is the real
@@ -155,7 +160,7 @@ def reset_pose():
 
 
 def jitter(d=6):
-    return random.uniform(-d, d)
+    return random.uniform(-d, d) * JSCALE
 
 
 def apply_pose(name):
@@ -304,7 +309,8 @@ def place_cam(cam, mode, kw):
     # lying / horizontal body: a horizontal camera sees it edge-on -> lift the view
     horizontal = abs(bone_head_world("head").z - hips_mid.z) < 0.25 * CHAR_H
     lift = Vector((0, 0, 1.0)) if horizontal else Vector((0, 0, 0))
-    fdir = Vector((random.uniform(-0.25, 0.25), FWD, 0)).normalized()
+    spread = min(0.25 * JSCALE, 0.9)
+    fdir = Vector((random.uniform(-spread, spread), FWD, 0)).normalized()
     if mode == "full":
         fit_cam(cam, body_pts, fdir + lift, margin=1.2)
     elif mode == "bust":
@@ -435,16 +441,21 @@ for build in ([NATIVE_BUILD] if NATIVE_BUILD else BUILDS):
             place_cam(cam, cmode, kw)
             sid = f"{MODEL}_{build}_{pose}_{cmode}" if not NATIVE_BUILD \
                 else f"{MODEL}_{pose}_{cmode}"
+            if SEED_IN_NAME:
+                sid += f"_s{SEED}"
             d = os.path.join(OUT, sid)
             os.makedirs(d, exist_ok=True)
             kps = project_and_flag(cam, kw)
             with open(os.path.join(d, "gt.json"), "w") as f:
                 json.dump({"scene": sid, "model": MODEL, "build": build, "pose": pose,
                            "cam": cmode, "img_w": RES[0], "img_h": RES[1],
+                           "seed": SEED, "jscale": JSCALE,
                            "coco_order": COCO, "keypoints": kps,
                            "face_kp_approx": True}, f, indent=1)
-            render(os.path.join(d, "toon.png"), "toon")
-            render(os.path.join(d, "line.png"), "line")
+            if "toon" in PASSES:
+                render(os.path.join(d, "toon.png"), "toon")
+            if "line" in PASSES:
+                render(os.path.join(d, "line.png"), "line")
             n += 1
             print("SCENE DONE", sid)
 print(f"ALL DONE {n} scenes")

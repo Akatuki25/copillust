@@ -79,11 +79,55 @@ New-Item -ItemType Junction -Path vendor\mmpose\mmpose\.mim -Target (Resolve-Pat
 - seed_san×v2 の再測定で、v2 の低スコアは bust カメラ破綻由来と確認
   (line 対照自体が bust で 0.40; full/high では cs0.9 ≈ 対照)。fidelity_seed_v2.json
 
-## 3. R2b: 混合再学習 (WSL2)
+## 3. R2b: 混合再学習 (2026-07-04 パイプライン確立)
 
-R2a 合格後。数万枚生成 → COCO 形式に変換 (gt.json は既に COCO17 順 + v flag) →
-BP 3.2K と混合し、`humanart_curriculum_s2.py` ベースの config で fine-tune。
-batch 256 / 192×256 で VRAM ~10GB。変換スクリプトは R2a 合格後に作成する。
+### 生成構成 (ベンチ確定)
+
+| 構成 | 速度 (5060 Ti) | 忠実度 PCK@0.1 (32枚ベンチ) |
+|------|------|------|
+| steps28 / batch1 (R2a 従来) | 11.9s/枚 | 0.829 |
+| **steps16 / batch1 (R2b 採用)** | **6.9s/枚** | **0.884** |
+| batch≥2 | 8.4〜10.2s/枚 | (VRAM 溢れで逆効果 — batch は 1 固定) |
+
+steps 削減は速度 1.7倍 + 忠実度も改善 (デノイズ工程が短いほど条件から離れない)。
+
+### データ生成 (Windows ネイティブ)
+
+```powershell
+# 1) レンダスイープ: 64 シード × 126 シーン構成 = 8,064 シーン (~2.5h, 4並列)
+powershell -File render_r2b.ps1   # --jscale 2 --passes line --seed-in-name
+
+# 2) 生成: シーンごとに (style,cs) を2条件サンプル = 16,128枚 (~31h)
+$env:RENDERS_DIR = "...\r2b\renders"; $env:GEN_OUT = "...\r2b\gen"
+genv\Scripts\python generate_sketch.py --variants 2 --steps 16 --batch 1
+
+# 3) 品質ゲート測定 → COCO 変換 → BP と混合
+.venv\Scripts\python experiments\synth\measure_fidelity.py --gen ...\r2b\gen --renders ...\r2b\renders --model "Curriculum S2" --out ...\r2b\fidelity.json
+genv\Scripts\python synth_to_coco.py --gen r2b\gen --renders r2b\renders --out r2b\synth_train.json --fidelity r2b\fidelity.json --min-pck02 0.75
+genv\Scripts\python merge_r2b.py --bp <data>/merged/annotations/train.json --synth r2b\synth_train.json --out <data>/merged/annotations/train_r2b.json
+```
+
+### 学習 (WSL2 — 環境構築済み: ~/copillust, torch cu128 + mmcv CPU-ops ソースビルド)
+
+WSL 側に r2b/gen をコピーし (9P 越え I/O は遅い)、
+`data/merged/images/synth -> r2b/gen` を symlink した上で:
+
+```bash
+# 本命: BP 3200 + synth 混合 (config: experiments/synth/r2b_mixed.py)
+.venv/bin/python -m pose_estimation.training.trainer \
+  --config pose_estimation/models/configs/experiments/synth/r2b_mixed.py \
+  --work-dir experiments/train/r2b_mixed --device cuda
+# 対照: 同一スケジュールで BP のみ (synth 効果とエポック追加効果の分離)
+.venv/bin/python -m pose_estimation.training.trainer \
+  --config pose_estimation/models/configs/experiments/synth/r2b_bp_only.py \
+  --work-dir experiments/train/r2b_bp_only --device cuda
+```
+
+判定: BP test / Crop-Bizarre / **mydata lineart+chibi OKS@50 で S2 比 +0.05**
+(redesign_proposal §7)。mydata 画像は gitignore のため要転送。
+WSL 学習実測: 3200枚/エポック ≈ 20秒 (batch32) — 19K 混合でも数分/エポック。
+ドライラン時の注意: S2 config の評価器は `data/merged_500_corrected/annotations/val.json`
+を参照する (data/merged の val.json をコピーで可)。
 
 ## 2026-07-04 改訂: renders_v2 の欠陥と修正 (Windows 側)
 

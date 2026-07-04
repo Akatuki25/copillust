@@ -1,0 +1,399 @@
+{
+ "model": "Curriculum S2",
+ "rows": [
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 0.6923076923076923,
+   "mean_nd": 0.1365792155265808
+  },
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.1377514898777008
+  },
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.6153846153846154,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.15498831868171692
+  },
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.8461538461538461,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.13372358679771423
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.028250867500901222
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.017327401787042618
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.022374242544174194
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.017747929319739342
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.014771215617656708
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.013113073073327541
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.017721792683005333
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.014647148549556732
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 1.0,
+   "mean_nd": 0.07264383882284164
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.04323935881257057
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.11531077325344086
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 0.8461538461538461,
+   "pck02": 1.0,
+   "mean_nd": 0.06046277657151222
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 0.8823529411764706,
+   "pck02": 1.0,
+   "mean_nd": 0.04165622591972351
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.03058355301618576
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.04083985835313797
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.031295716762542725
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.018327195197343826
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.01843074895441532
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 0.8823529411764706,
+   "pck02": 0.8823529411764706,
+   "mean_nd": 0.056290268898010254
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.018521742895245552
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.35294117647058826,
+   "pck02": 0.8823529411764706,
+   "mean_nd": 0.12066470831632614
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.7058823529411765,
+   "pck02": 1.0,
+   "mean_nd": 0.06391484290361404
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.5294117647058824,
+   "pck02": 0.9411764705882353,
+   "mean_nd": 0.10252244025468826
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.6470588235294118,
+   "pck02": 0.9411764705882353,
+   "mean_nd": 0.08220662921667099
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.028396114706993103
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.031445734202861786
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02902308665215969
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02801455557346344
+  }
+ ],
+ "summary": {
+  "build:chibi|lineart_cs0p55": {
+   "n": 4,
+   "pck01": 0.655,
+   "pck02": 0.894,
+   "mean_nd": 0.093
+  },
+  "build:chibi|lineart_cs0p90": {
+   "n": 4,
+   "pck01": 0.85,
+   "pck02": 0.962,
+   "mean_nd": 0.069
+  },
+  "build:chibi|rough_cs0p55": {
+   "n": 4,
+   "pck01": 0.709,
+   "pck02": 0.908,
+   "mean_nd": 0.103
+  },
+  "build:chibi|rough_cs0p90": {
+   "n": 4,
+   "pck01": 0.835,
+   "pck02": 0.947,
+   "mean_nd": 0.077
+  },
+  "build:normal|lineart_cs0p55": {
+   "n": 4,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.022
+  },
+  "build:normal|lineart_cs0p90": {
+   "n": 4,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02
+  },
+  "build:normal|rough_cs0p55": {
+   "n": 4,
+   "pck01": 0.971,
+   "pck02": 0.971,
+   "mean_nd": 0.031
+  },
+  "build:normal|rough_cs0p90": {
+   "n": 4,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02
+  },
+  "lineart_cs0p55": {
+   "n": 8,
+   "pck01": 0.827,
+   "pck02": 0.947,
+   "mean_nd": 0.058
+  },
+  "lineart_cs0p90": {
+   "n": 8,
+   "pck01": 0.925,
+   "pck02": 0.981,
+   "mean_nd": 0.044
+  },
+  "rough_cs0p55": {
+   "n": 8,
+   "pck01": 0.84,
+   "pck02": 0.939,
+   "mean_nd": 0.067
+  },
+  "rough_cs0p90": {
+   "n": 8,
+   "pck01": 0.917,
+   "pck02": 0.973,
+   "mean_nd": 0.048
+  }
+ }
+}

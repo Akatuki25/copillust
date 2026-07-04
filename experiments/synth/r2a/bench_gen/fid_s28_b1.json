@@ -1,0 +1,399 @@
+{
+ "model": "Curriculum S2",
+ "rows": [
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.5384615384615384,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.14745546877384186
+  },
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.11362604051828384
+  },
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.1370721459388733
+  },
+  {
+   "scene": "fem_vroid_chibi_armup_bust",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "armup",
+   "cam": "bust",
+   "pck01": 0.6153846153846154,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.12991613149642944
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 0.47058823529411764,
+   "pck02": 0.7058823529411765,
+   "mean_nd": 0.1294812262058258
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.01705339178442955
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.021961167454719543
+  },
+  {
+   "scene": "fem_vroid_normal_lie_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "lie",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.016564028337597847
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.01612956076860428
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.014602084644138813
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.018952995538711548
+  },
+  {
+   "scene": "fem_vroid_normal_walk_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "walk",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.014105013571679592
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 1.0,
+   "mean_nd": 0.08152132481336594
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.04509430378675461
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 0.6923076923076923,
+   "pck02": 0.8461538461538461,
+   "mean_nd": 0.12290077656507492
+  },
+  {
+   "scene": "masc_vroid_chibi_crouch_bust",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "crouch",
+   "cam": "bust",
+   "pck01": 0.8461538461538461,
+   "pck02": 1.0,
+   "mean_nd": 0.06312043964862823
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.03399917483329773
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.03299877792596817
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.03636851906776428
+  },
+  {
+   "scene": "masc_vroid_chibi_stand_full",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "stand",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.03750601038336754
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 0.8823529411764706,
+   "pck02": 0.8823529411764706,
+   "mean_nd": 0.06132575869560242
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.019408123567700386
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 0.058823529411764705,
+   "pck02": 0.058823529411764705,
+   "mean_nd": 0.4998091459274292
+  },
+  {
+   "scene": "masc_vroid_normal_wave_high",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "wave",
+   "cam": "high",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.01782563142478466
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "lineart_cs0p55",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.5294117647058824,
+   "pck02": 0.9411764705882353,
+   "mean_nd": 0.0991792380809784
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "lineart_cs0p90",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.6470588235294118,
+   "pck02": 1.0,
+   "mean_nd": 0.07257914543151855
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "rough_cs0p55",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.5294117647058824,
+   "pck02": 0.7647058823529411,
+   "mean_nd": 0.12530691921710968
+  },
+  {
+   "scene": "seed_san_chibi_walk_high",
+   "cond": "rough_cs0p90",
+   "build": "chibi",
+   "pose": "walk",
+   "cam": "high",
+   "pck01": 0.6470588235294118,
+   "pck02": 0.9411764705882353,
+   "mean_nd": 0.07735653966665268
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "lineart_cs0p55",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.030774323269724846
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "lineart_cs0p90",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02734771929681301
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "rough_cs0p55",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02811162732541561
+  },
+  {
+   "scene": "seed_san_normal_sit_full",
+   "cond": "rough_cs0p90",
+   "build": "normal",
+   "pose": "sit",
+   "cam": "full",
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.03325394168496132
+  }
+ ],
+ "summary": {
+  "build:chibi|lineart_cs0p55": {
+   "n": 4,
+   "pck01": 0.69,
+   "pck02": 0.947,
+   "mean_nd": 0.091
+  },
+  "build:chibi|lineart_cs0p90": {
+   "n": 4,
+   "pck01": 0.835,
+   "pck02": 0.962,
+   "mean_nd": 0.066
+  },
+  "build:chibi|rough_cs0p55": {
+   "n": 4,
+   "pck01": 0.729,
+   "pck02": 0.864,
+   "mean_nd": 0.105
+  },
+  "build:chibi|rough_cs0p90": {
+   "n": 4,
+   "pck01": 0.777,
+   "pck02": 0.947,
+   "mean_nd": 0.077
+  },
+  "build:normal|lineart_cs0p55": {
+   "n": 4,
+   "pck01": 0.838,
+   "pck02": 0.897,
+   "mean_nd": 0.059
+  },
+  "build:normal|lineart_cs0p90": {
+   "n": 4,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02
+  },
+  "build:normal|rough_cs0p55": {
+   "n": 4,
+   "pck01": 0.765,
+   "pck02": 0.765,
+   "mean_nd": 0.142
+  },
+  "build:normal|rough_cs0p90": {
+   "n": 4,
+   "pck01": 1.0,
+   "pck02": 1.0,
+   "mean_nd": 0.02
+  },
+  "lineart_cs0p55": {
+   "n": 8,
+   "pck01": 0.764,
+   "pck02": 0.922,
+   "mean_nd": 0.075
+  },
+  "lineart_cs0p90": {
+   "n": 8,
+   "pck01": 0.917,
+   "pck02": 0.981,
+   "mean_nd": 0.043
+  },
+  "rough_cs0p55": {
+   "n": 8,
+   "pck01": 0.747,
+   "pck02": 0.814,
+   "mean_nd": 0.124
+  },
+  "rough_cs0p90": {
+   "n": 8,
+   "pck01": 0.889,
+   "pck02": 0.973,
+   "mean_nd": 0.049
+  }
+ }
+}
