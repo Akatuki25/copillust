@@ -44,6 +44,18 @@ FINETUNED = {
         CONFIGS_DIR / "experiments/curriculum/humanart_curriculum_s2.py",
         TRAIN_DIR / "curriculum_s2/best_coco_AP_epoch_10.pth",
     ),
+    "R2b mixed": (
+        CONFIGS_DIR / "experiments/synth/r2b_mixed.py",
+        TRAIN_DIR / "r2b_mixed/best_coco_AP_epoch_10.pth",
+    ),
+    "R2b BP-only": (
+        CONFIGS_DIR / "experiments/synth/r2b_bp_only.py",
+        TRAIN_DIR / "r2b_bp_only/best_coco_AP_epoch_4.pth",
+    ),
+    "R2b mixed v2": (
+        CONFIGS_DIR / "experiments/synth/r2b_mixed_v2.py",
+        TRAIN_DIR / "r2b_mixed_v2/best_coco_AP_epoch_8.pth",
+    ),
     "3L+mask": (
         CONFIGS_DIR / "experiments/occluded_reasoning/occluded_3layer.py",
         TRAIN_DIR / "techniques/occluded_3layer/best_coco_AP_epoch_10.pth",
